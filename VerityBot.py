@@ -4,6 +4,7 @@ from discord.ext import commands
 from discord.ui import Button, View, Select
 from interactions import SlashCommand, slash_command
 import os
+# TODO: Sort out env
 
 '''
 This solver relies on there being three cases:
@@ -91,10 +92,10 @@ bot = commands.Bot(command_prefix="/", intents=intents)
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user.name} ({bot.user.id})")
+    
 
-
-@bot.command(name="solve", description="Solve dissection within the verity encounter!")
-async def SolverStart(ctx):
+@bot.command(name="dissect", guild=None)
+async def Dissect(ctx):
     view = InnerSelectView()
     await ctx.send("Enter inner statue order:", view=view, ephemeral=True, delete_after=100)
     view = OuterSelectView()
@@ -104,7 +105,6 @@ async def SolverStart(ctx):
 @bot.command(name='vhelp')
 async def VHelp(ctx):
     await ctx.send("Current Commands: \n/solve", ephemeral=True)
-
 
 def GetShapeStructures():
     leftShapes = SHAPEDEFINITIONS[outside[0]]
