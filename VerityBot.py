@@ -47,7 +47,6 @@ class SubmitButton(Button):
         await interaction.response.send_message(message)
         
 
-
 class InnerSelection(Select):
     def __init__(self, position):
         self.Position = position
@@ -103,7 +102,7 @@ async def Dissect(ctx):
     
 @bot.command(name='vhelp')
 async def VHelp(ctx):
-    await ctx.send("Current Commands: \n/solve", ephemeral=True)
+    await ctx.send("Current Commands: \n/dissect", ephemeral=True)
 
 def GetShapeStructures():
     leftShapes = SHAPEDEFINITIONS[outside[0]]
