@@ -4,7 +4,6 @@ from discord.ext import commands
 from discord.ui import Button, View, Select
 from interactions import SlashCommand, slash_command
 import os
-# TODO: Sort out env
 
 '''
 This solver relies on there being three cases:
